@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/frontend.css">
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="js/firebase_init.js"></script>
+</head>
+
+<body>
+    <div class='container-fluid bg-primary'>
+        <h1 id='header-title'>Locus</h1>
+        <button id='reset-button'>Reset</button>
+    </div>
+
+    <div id="map"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/maps.js" ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqUwZI6ZEcDZn00CwtBnyDFO5uyH0By1o&callback=initMap"
+    async defer></script>
+
+    <div id='checklist'>
+        <form>
+            <div id='power'>
+            <button id='power-button'>Power Outlets</button>
+            </div>
+            <div id='washrooms'>
+            <button id='washroom-button'>Washrooms</button>
+            </div>
+            <div id='seating'>
+            <button id='seating-button'>Comfortable Seating</button>
+            </div>
+            <div id='isolated'>
+            <button id='isolated-button'>Isolated</button>
+            </div>
+            <div id='wifi'>
+            <button id='wifi-button'>Wifi Access</p>
+            </div>
+            <div id='coffee'>
+            <button id='coffee-button'>Caffeine</button>
+            </div>
+            <div id='food'>
+            <button id='food-button'>Food</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('power-button').onclick = power_clicked;
+        function power_clicked() {
+            document.getElementById('power-button').value = true;
+            document.getElementById('power-button').style.backgroundColor = 'green';
+        }
+    </script>
+    
+</body>
+</html>
