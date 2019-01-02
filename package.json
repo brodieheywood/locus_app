@@ -24,6 +24,7 @@
   "homepage": "https://github.com/brodieheywood/coop-hackathon#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "firebase": "^5.7.2",
     "firebase-admin": "^6.4.0",
     "fs": "0.0.1-security",
     "jsdom": "^13.1.0",

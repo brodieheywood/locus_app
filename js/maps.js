@@ -10,3 +10,21 @@ function initMap() {
     title: 'Hello World!'
   });
 }
+
+var locations;
+
+function retrieveLocations() {
+  $.ajax({
+    url: "/getLocations",
+    type: "GET",
+    datatype: "json",
+    success: function(data) {
+      locations = data;
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+}
+
+retrieveLocations();

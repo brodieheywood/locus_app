@@ -1,17 +1,25 @@
-const admin = require('firebase-admin');
+var firebase = require("firebase");
 const express = require("express");
 const app = express();
 const fs = require("fs");
 const { JSDOM } = require('jsdom');
 const PORT = process.env.PORT || 5000
-const serviceAccount = require("./node-client-app/spaces-service-account.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://spaces-1546453763645.firebaseio.com/"
+
+var firebase = require("firebase");
+firebase.initializeApp({
+ "serviceAccount": "./node-client-app/spaces-service-account.json",
+ "databaseURL": "https://spaces-1546453763645.firebaseio.com/"
 });
 
-var ref = admin.app().database().ref().child("locations");
+var ref = firebase.app().database().ref();
+ref.once("value")
+ .then(function (snap) {
+ console.log("snap.val()", snap.val());
+ });
+
+app.use("/js", express.static("js"));
+app.use("/css", express.static("css"));
 
 app.get("/", function (req, res) {
   let doc = fs.readFileSync("index.html");
@@ -20,9 +28,10 @@ app.get("/", function (req, res) {
 });
 
 app.get("/getLocations", function(req, res) {
-  ref.once("value", function(snap) {
+  ref.once("value").then(function (snap) {
+    console.log("snap.val()", snap.val());
     res.send(snap.val());
-  });
+ });
 });
 
 app.listen(PORT, function() {
