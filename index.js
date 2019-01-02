@@ -12,12 +12,6 @@ firebase.initializeApp({
  "databaseURL": "https://spaces-1546453763645.firebaseio.com/"
 });
 
-var ref = firebase.app().database().ref();
-ref.once("value")
- .then(function (snap) {
- console.log("snap.val()", snap.val());
- });
-
 app.use("/js", express.static("js"));
 app.use("/css", express.static("css"));
 
@@ -26,6 +20,8 @@ app.get("/", function (req, res) {
   let dom = new JSDOM(doc);
   res.send(dom.serialize());
 });
+
+var ref = firebase.app().database().ref();
 
 app.get("/getLocations", function(req, res) {
   ref.once("value").then(function (snap) {
