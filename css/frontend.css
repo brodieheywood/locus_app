@@ -1,32 +1,60 @@
-#map{
-    float: left;
-    width: 60%;
+html {
+    overflow: hidden;
+}
+
+.site {
+    /* background-image: url(./assets/background.png);
+    background-size: 127vmax;
+    background-repeat: no-repeat;
+    height: 242vh;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 100vh;
+    grid-template-areas:
+        'home'
+        'info';
+}
+
+.home {
+    background-image: url(./background.png);
+    background-size: 100% 98%;
+    background-repeat: no-repeat;
+    grid-area: home;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas:
+        'title title title title title'
+        'spacer1 map space2 checklist spacer3'
+        'footer footer footer footer footer';
+}
+
+#map {
+    grid-area: map;
+    width: 100%;
     height: 100%;
-    border: solid 2pt black;
-    margin: 5pt;
-    padding: 1pt;
+    border: solid 2pt green;
 }
-#checklist{
-    float: right;
-}
-#header-title{
-    float: left;
-    width: 300pt;
-}
-#reset-button{
-    float: right;
-    margin: 15pt;
-}
-#checklist{
-    margin: 15pt 50pt;
-    float: left;
+
+#checklist {
+    grid-area: checklist;
+    display:grid;
+    width: 100%;
+    height: 100%;
     font-size: 20pt;
-    border: solid 2pt grey;
-    padding: 5pt;
-    background-color: rgb(235, 235, 235);
+    border: solid 2pt green;
+    background-color: lightgreen;
+    opacity: 0.5;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+#power {
+    grid-row: 1/2;
 }
+
+#washrooms {
+    grid-row: 2/3;
+}
+
