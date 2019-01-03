@@ -2,6 +2,10 @@
   "name": "co-op-hackathon",
   "version": "1.0.0",
   "description": "App to find locations near you that meet you criteria",
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
