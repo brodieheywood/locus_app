@@ -57,6 +57,8 @@ function markers() {
   }
 }
 
+var locationsArray = [];
+
 function retrieveLocations() {
   $.ajax({
     url: "/getLocations",
@@ -65,6 +67,10 @@ function retrieveLocations() {
     success: function(data) {
       locations = data;
       markers();
+      
+      for (place in locations.locations) {
+        locationsArray.push(locations.locations[place]);
+      }
     },
     error: function(error) {
       console.log(error);
