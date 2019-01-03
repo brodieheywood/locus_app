@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
 *:focus {
     outline: none;
 }
@@ -27,11 +29,31 @@ html {
     grid-area: home;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 2fr 1fr;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 0.75fr 0.25fr 8fr 1fr;
     grid-template-areas:
         'title title title title title'
+        'espacio espacio espacio espacio espacio'
         'spacer1 map space2 checklist spacer3'
         'footer footer footer footer footer';
+}
+
+#header {
+    grid-area: title;
+    /* background-color: #257197; */
+    font-family: 'Lobster', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 7vh;
+    grid-column: 1/3;
+}
+
+#logo {
+    position: relative;
+    grid-area: title;
+    grid-column: 1/2;
+    float: left;
+    height: 5vh;
+    top: 2.5vh;
+    left: 1vh;
 }
 
 #map {
@@ -68,6 +90,7 @@ html {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
         grid-template-areas:
+        'header'
         'map'
         'checklist';
     }
