@@ -29,7 +29,6 @@ function coffee_clicked(e) {
     markerArray[6].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
 
 var food_buttons = document.getElementById('food')
@@ -53,7 +52,6 @@ function food_clicked(e) {
     markerArray[6].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
 
 var power_buttons = document.getElementById('power');
@@ -75,7 +73,6 @@ function power_clicked(e) {
     markerArray[6].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
 
 var washroom_buttons = document.getElementById('washrooms')
@@ -103,7 +100,6 @@ function washroom_clicked(e) {
     markerArray[6].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
 
 var wifi_buttons = document.getElementById('wifi')
@@ -127,7 +123,6 @@ function wifi_clicked(e) {
     markerArray[6].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
 
 var outside_buttons = document.getElementById('outside')
@@ -145,7 +140,6 @@ function outside_clicked(e) {
     markerArray[3].setVisible(false);
     markerArray[5].setVisible(false);
   }
-  reloadMap();
 };
 
 var isBusy_buttons = document.getElementById('notBusy')
@@ -165,7 +159,6 @@ function isBusy_clicked(e) {
     markerArray[3].setVisible(false);
     markerArray[5].setVisible(false);
   }
-  reloadMap();
 };
 
 var late_buttons = document.getElementById('late')
@@ -183,13 +176,7 @@ function late_clicked(e) {
     markerArray[3].setVisible(false);
     markerArray[7].setVisible(false);
   }
-  reloadMap();
 };
-
-function reloadMap() {
-  console.log("Reloaded Map!");
-  console.log(locationsArray);
-}
 
 $( 'button' ).click(function() {
   $( this ).toggleClass( 'clicked-button' );
