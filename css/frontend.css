@@ -147,6 +147,29 @@ html {
     margin: 0px;
 }
 
+.form-div  h1 {text-align: center;}
+.form-div > div {
+  border-bottom: solid 3px green;
+  margin-bottom: 20px;
+}
+
+.yes-no {
+  display: inline-flex;
+}
+
+.form-div {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  margin-top: 50px;
+}
+
+input[type=text] {
+  width: 100%;
+  height: 25px;
+}
+
 /* mobile-friendliness */
 @media screen and (max-width: 600px) {
     .home {
