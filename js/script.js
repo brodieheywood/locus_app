@@ -1,11 +1,3 @@
-
-
-var powerButton = $("#power");
-
-powerButton.click(function () {
-  console.log("Power clicked!");
-});
-
 var coffee = false;
 var comfy = false;
 var food = false;

@@ -45,16 +45,11 @@ html {
     font-size: 20pt;
     border: solid 2pt green;
     background-color: lightgreen;
-    opacity: 0.5;
+    opacity: 0.75;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-#power {
-    grid-row: 1/2;
+.checklist-button {
+    font-size: 3vh;
 }
-
-#washrooms {
-    grid-row: 2/3;
-}
-
