@@ -22,9 +22,9 @@ function initMap() {
     zoom: 18
   });
   var marker = new google.maps.Marker({
-    position: {lat: 49.283423, lng: -123.11530708},
+    position: {lat: userLat, lng: userLon},
     map: map,
-    title: 'Hello World!'
+    title: 'Current Location'
   });
 }
 
