@@ -120,6 +120,8 @@ html {
     position: relative;
     top: 71vh;
     left: 19vw;
+    height: 5vh;
+    width: 15vw;
 }
 
 .add-location-button {
