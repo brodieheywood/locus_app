@@ -6,7 +6,7 @@
 
 html {
     overflow: hidden;
-    border-top: solid 2px green; 
+    border-top: solid 2px green;
     background-image: url(./background.png);
     background-size: 127vmax 100vh;
     /* background-repeat: no-repeat; */
@@ -16,10 +16,8 @@ html {
 
 .locoImg {
     height: 75px;
-    margin-left: 15px;
     border: solid 2px black;
 }
-.headings {display: inline-flex;}
 
 .site {
     /* background-image: url(./assets/background.png);
@@ -183,5 +181,5 @@ html {
         grid-area: footer;
         z-index: 1;
     }
-    
+
 }
