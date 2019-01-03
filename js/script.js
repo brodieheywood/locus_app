@@ -15,23 +15,19 @@ function coffee_clicked(e) {
   e.preventDefault();
   if (coffee === false) {
     coffee = true;
+    markerArray[0].setVisible(true);
+    markerArray[3].setVisible(true);
+    markerArray[4].setVisible(true);
+    markerArray[6].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (coffee === true) {
     coffee = false;
-  }
-  reloadMap();
-};
-
-var seating_buttons = document.getElementById('seating')
-seating_buttons.onclick = seating_clicked;
-
-function seating_clicked(e) {
-  e.preventDefault();
-  if (comfy === false) {
-    comfy = true;
-  }
-  else if (comfy === true) {
-    comfy = false;
+    markerArray[0].setVisible(false);
+    markerArray[3].setVisible(false);
+    markerArray[4].setVisible(false);
+    markerArray[6].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };
@@ -43,9 +39,19 @@ function food_clicked(e) {
   e.preventDefault();
   if (food === false) {
     food = true;
+    markerArray[0].setVisible(true);
+    markerArray[3].setVisible(true);
+    markerArray[4].setVisible(true);
+    markerArray[6].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (food === true) {
     food = false;
+    markerArray[0].setVisible(false);
+    markerArray[3].setVisible(false);
+    markerArray[4].setVisible(false);
+    markerArray[6].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };
@@ -57,9 +63,17 @@ function power_clicked(e) {
   e.preventDefault();
   if (power === false) {
     power = true;
+    markerArray[0].setVisible(true);
+    markerArray[1].setVisible(true);
+    markerArray[6].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (power === true) {
     power = false;
+    markerArray[0].setVisible(false);
+    markerArray[1].setVisible(false);
+    markerArray[6].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };
@@ -71,9 +85,23 @@ function washroom_clicked(e) {
   e.preventDefault();
   if (washrooms === false) {
     washrooms = true;
+    markerArray[0].setVisible(true);
+    markerArray[1].setVisible(true);
+    markerArray[3].setVisible(true);
+    markerArray[4].setVisible(true);
+    markerArray[5].setVisible(true);
+    markerArray[6].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (washrooms === true) {
     washrooms = false;
+    markerArray[0].setVisible(false);
+    markerArray[1].setVisible(false);
+    markerArray[3].setVisible(false);
+    markerArray[4].setVisible(false);
+    markerArray[5].setVisible(false);
+    markerArray[6].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };
@@ -85,9 +113,19 @@ function wifi_clicked(e) {
   e.preventDefault();
   if (wifi === false) {
     wifi = true;
+    markerArray[0].setVisible(true);
+    markerArray[1].setVisible(true);
+    markerArray[4].setVisible(true);
+    markerArray[6].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (wifi === true) {
     wifi = false;
+    markerArray[0].setVisible(false);
+    markerArray[1].setVisible(false);
+    markerArray[4].setVisible(false);
+    markerArray[6].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };
@@ -99,9 +137,11 @@ function outside_clicked(e) {
   e.preventDefault();
   if (outside === false) {
     outside = true;
+    markerArray[5].setVisible(true);
   }
   else if (outside === true) {
     outside = false;
+    markerArray[5].setVisible(false);
   }
   reloadMap();
 };
@@ -113,9 +153,15 @@ function isBusy_clicked(e) {
   e.preventDefault();
   if (isBusy === false) {
     isBusy = true;
+    markerArray[2].setVisible(true);
+    markerArray[3].setVisible(true);
+    markerArray[5].setVisible(true);
   }
   else if (isBusy === true) {
     isBusy = false;
+    markerArray[2].setVisible(false);
+    markerArray[3].setVisible(false);
+    markerArray[5].setVisible(false);
   }
   reloadMap();
 };
@@ -127,9 +173,13 @@ function late_clicked(e) {
   e.preventDefault();
   if (late === false) {
     late = true;
+    markerArray[3].setVisible(true);
+    markerArray[7].setVisible(true);
   }
   else if (late === true) {
     late = false;
+    markerArray[3].setVisible(false);
+    markerArray[7].setVisible(false);
   }
   reloadMap();
 };

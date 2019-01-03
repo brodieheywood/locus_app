@@ -3,12 +3,14 @@ var map;
 var userLat;
 var userLon;
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position){
-    userLat = position.coords.latitude;
-    userLon = position.coords.longitude;
-  });
-}
+// async function getLoco() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      userLat = position.coords.latitude;
+      userLon = position.coords.longitude;
+    });
+  }
+// }
 
 function initMap() {
 
@@ -33,6 +35,7 @@ function initMap() {
 
 var locations;
 var prev_infowindow = false;
+var markerArray = [];
 
 function markers() {
   for (place in locations.locations) {
@@ -54,10 +57,10 @@ function markers() {
       prev_infowindow = infowindow;
       infowindow.open(map, marker);
     });
+    marker.setVisible(false);
+    markerArray.push(marker);
   }
 }
-
-var locationsArray = [];
 
 function retrieveLocations() {
   $.ajax({
@@ -67,10 +70,6 @@ function retrieveLocations() {
     success: function(data) {
       locations = data;
       markers();
-      
-      for (place in locations.locations) {
-        locationsArray.push(locations.locations[place]);
-      }
     },
     error: function(error) {
       console.log(error);
