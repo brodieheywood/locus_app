@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 *:focus {
     outline: none;
@@ -94,19 +95,20 @@ html {
     background-color: lightgreen;
     font-size: 3vh;
     text-align: center;
-    font-family: Lobster;
+    font-family: Raleway;
     margin: auto auto;
 }
 
 .checklist-button {
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: lightblue;
+    font-family: Raleway;
     border: solid 1px white;
     cursor: pointer;
 }
 
 .clicked-button {
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: lightgreen;
     border: solid 1px white;
     cursor: pointer;
@@ -118,6 +120,8 @@ html {
     position: relative;
     top: 71vh;
     left: 19vw;
+    height: 5vh;
+    width: 15vw;
 }
 
 .add-location-button {
@@ -126,7 +130,7 @@ html {
     border: solid 1px lightgray;
     width: 15vw;
     height: 5vh;
-    display: grid;
+    display: inline-flex;
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
         'left right';
@@ -138,7 +142,8 @@ html {
     font-family: 'Roboto';
     font-size: 1.5vmax;
     text-align: center;
-    bottom: 1.4vh;
+    line-height: 35px;
+    margin:auto;
 }
 
 #add-location-icon {
