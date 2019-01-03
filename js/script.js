@@ -190,3 +190,12 @@ function reloadMap() {
   console.log("Reloaded Map!");
   console.log(locationsArray);
 }
+
+$( 'button' ).click(function() {
+  $( this ).toggleClass( 'clicked-button' );
+});
+
+function scrollToSection(section) {
+  var elmnt = document.getElementById(section);
+  elmnt.scrollIntoView();
+}

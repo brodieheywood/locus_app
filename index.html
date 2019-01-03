@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/frontend.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/maps.js" ></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
@@ -24,37 +25,82 @@
       <div id="map"></div>
 
       <div id='checklist'>
-        <button class='checklist-button' id='power'>
-          Power Outlets
+        <button class='checklist-button' id='food'>
+          <i class="material-icons" style="font-size: 10vh">
+            fastfood
+          </i>
+          Food
         </button>
         <button class='checklist-button' id='washrooms'>
-          Washrooms
+          <i class="material-icons" style="font-size: 10vh">
+            wc
+          </i>
+          Washroom
         </button>
         <!-- <button class='checklist-button' id='seating'>
           Seats
         </button> -->
         <button class='checklist-button' id='notBusy'>
+          <i class="material-icons" style="font-size: 10vh">
+            sentiment_satisfied
+            <!-- spa -->
+          </i>
           Not Busy
         </button>
         <button class='checklist-button' id='wifi'>
+          <i class="material-icons" style="font-size: 10vh">
+            wifi
+          </i>
           WiFi
         </button>
         <button class='checklist-button' id='coffee'>
-          Serves Coffee/Tea
+          <i class="material-icons" style="font-size: 10vh">
+            local_cafe
+          </i>
+          Coffee
         </button>
-        <button class='checklist-button' id='food'>
-          Serves Food
+        <button class='checklist-button' id='power'>
+          <i class="material-icons" style="font-size: 10vh">
+            power
+          </i>
+          Power
         </button>
         <button class='checklist-button' id='late'>
+          <i class="material-icons" style="font-size: 10vh">
+            <!-- tonality -->
+            <!-- brightness_2 -->
+            brightness_3
+          </i>
           Open Late
         </button>
         <button class='checklist-button' id='outside'>
-          Outside
+          <i class="material-icons" style="font-size: 10vh">
+            <!-- beach_access -->
+            nature_people
+          </i>
+          Outdoors
+        </button>
+      </div>
+
+      <div id='add-location'>
+        <button class='add-location-button' onclick="scrollToSection('info')">
+          <i class="material-icons" id='add-location-icon'>
+            add_location
+          </i>
+          <p id='add-new-text'>Add New Spot</p>
         </button>
       </div>
 
     </div>
-    <div class='info'></div>
+
+    <div id='info'>
+      <button class='home-button' onclick="window.scrollTo(0, 0);">
+        <i class="material-icons" id='home-button-icon'>
+          home
+        </i>
+      </button>
+    </div>
+
   </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqUwZI6ZEcDZn00CwtBnyDFO5uyH0By1o&callback=initMap"

@@ -8,15 +8,16 @@ html {
     overflow: hidden;
     border-top: solid 2px green; 
     background-image: url(./background.png);
-    background-size: 127vmax 65vmax;
-    background-repeat: no-repeat;
+    background-size: 127vmax 100vh;
+    /* background-repeat: no-repeat; */
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 .locoImg {
-  height: 75px;
-  margin-left: 15px;
-  border: solid 2px black;
+    height: 75px;
+    margin-left: 15px;
+    border: solid 2px black;
 }
 .headings {display: inline-flex;}
 
@@ -41,7 +42,7 @@ html {
     width: 100%; */
     grid-area: home;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 5fr 0.5fr 2fr 1fr;
     grid-template-rows: 0.75fr 0.25fr 8fr 1fr;
     grid-template-areas:
         'title title title title title'
@@ -65,7 +66,7 @@ html {
     grid-column: 1/2;
     float: left;
     height: 5vh;
-    top: 2.5vh;
+    top: 1vh;
     left: 1vh;
 }
 
@@ -74,6 +75,7 @@ html {
     width: 100%;
     height: 100%;
     border: solid 2pt green;
+    box-shadow: 3px 3px 3px gray;
 }
 
 #checklist {
@@ -81,31 +83,82 @@ html {
     display:grid;
     width: 100%;
     height: 100%;
-    border: solid 2px green;
+    border: solid 2px white;
     background-color: lightgreen;
-    opacity: 0.9;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    opacity: 0.75;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .checklist-button {
     font-size: 3vh;
+    background-color: lightblue;
+    border: solid 1px white;
+    cursor: pointer;
+}
+
+.clicked-button {
+    font-size: 3vh;
+    background-color: lightgreen;
+    border: solid 1px white;
+    cursor: pointer;
+}
+
+#add-location {
+    grid-area: map;
+    z-index: 1;
+    position: relative;
+    top: 71vh;
+    left: 19vw;
+}
+
+.add-location-button {
+    cursor: pointer;
+    background:#ffffff;
+    border: solid 1px lightgray;
+    width: 15vw;
+    height: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+        'left right';
+}
+
+#add-new-text {
+    grid-area: right;
+    position: relative;
+    font-family: 'Roboto';
+    font-size: 1.5vmax;
+    text-align: center;
+    bottom: 1.4vh;
+}
+
+#add-location-icon {
+    grid-area: left;
+    font-size: 4vh;
+    position: relative;
+    top: 0.5vh;
+    color: #666666;
+}
+
+#add-location-form {
+    grid-area: info;
 }
 
 /* mobile-friendliness */
 @media screen and (max-width: 600px) {
     .home {
-        background-image: url(./background.png);
-        background-size: 100% 98%;
-        background-repeat: no-repeat;
         grid-area: home;
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 0.5fr 0.25fr 5fr 0.5fr 2fr 0.5fr;
         grid-template-columns: 1fr;
         grid-template-areas:
-        'header'
+        'title'
+        'espacio1'
         'map'
-        'checklist';
+        'espacio2'
+        'checklist'
+        'footer';
     }
     #checklist {
         grid-area: checklist;
@@ -119,4 +172,16 @@ html {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
+    #logo {
+        position: static;
+        grid-area: title;
+        height: 5vh;
+        top: 1vh;
+        left: 1vh;
+    }
+    #add-location {
+        grid-area: footer;
+        z-index: 1;
+    }
+    
 }
