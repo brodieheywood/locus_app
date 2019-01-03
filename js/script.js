@@ -1,11 +1,3 @@
-
-
-var powerButton = $("#power");
-
-powerButton.click(function () {
-  console.log("Power clicked!");
-});
-
 var coffee = false;
 var comfy = false;
 var food = false;
@@ -27,6 +19,7 @@ function coffee_clicked(e) {
   else if (coffee === true) {
     coffee = false;
   }
+  reloadMap();
 };
 
 var seating_buttons = document.getElementById('seating')
@@ -40,6 +33,7 @@ function seating_clicked(e) {
   else if (comfy === true) {
     comfy = false;
   }
+  reloadMap();
 };
 
 var food_buttons = document.getElementById('food')
@@ -53,10 +47,10 @@ function food_clicked(e) {
   else if (food === true) {
     food = false;
   }
+  reloadMap();
 };
 
 var power_buttons = document.getElementById('power');
-console.log(power_buttons);
 power_buttons.onclick = power_clicked;
 
 function power_clicked(e) {
@@ -67,6 +61,7 @@ function power_clicked(e) {
   else if (power === true) {
     power = false;
   }
+  reloadMap();
 };
 
 var washroom_buttons = document.getElementById('washrooms')
@@ -80,6 +75,7 @@ function washroom_clicked(e) {
   else if (washrooms === true) {
     washrooms = false;
   }
+  reloadMap();
 };
 
 var wifi_buttons = document.getElementById('wifi')
@@ -93,6 +89,7 @@ function wifi_clicked(e) {
   else if (wifi === true) {
     wifi = false;
   }
+  reloadMap();
 };
 
 var outside_buttons = document.getElementById('outside')
@@ -106,6 +103,7 @@ function outside_clicked(e) {
   else if (outside === true) {
     outside = false;
   }
+  reloadMap();
 };
 
 var isBusy_buttons = document.getElementById('notBusy')
@@ -119,6 +117,7 @@ function isBusy_clicked(e) {
   else if (isBusy === true) {
     isBusy = false;
   }
+  reloadMap();
 };
 
 var late_buttons = document.getElementById('late')
@@ -132,4 +131,10 @@ function late_clicked(e) {
   else if (late === true) {
     late = false;
   }
+  reloadMap();
 };
+
+function reloadMap() {
+  console.log("Reloaded Map!");
+  console.log(locationsArray);
+}
