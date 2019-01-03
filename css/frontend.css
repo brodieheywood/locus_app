@@ -6,6 +6,11 @@
 
 html {
     overflow: hidden;
+    border-top: solid 2px green; 
+    background-image: url(./background.png);
+    background-size: 127vmax 65vmax;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .locoImg {
@@ -30,9 +35,10 @@ html {
 }
 
 .home {
-    background-image: url(./background.png);
-    background-size: 100% 98%;
+    /* background-image: url(./background.png);
+    background-size: 127vmax 60.5vmax;
     background-repeat: no-repeat;
+    width: 100%; */
     grid-area: home;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 2fr 1fr;
@@ -49,7 +55,7 @@ html {
     /* background-color: #257197; */
     font-family: 'Lobster', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
-    font-size: 7vh;
+    font-size: 8vh;
     grid-column: 1/3;
 }
 
@@ -75,9 +81,9 @@ html {
     display:grid;
     width: 100%;
     height: 100%;
-    border: solid 2pt green;
+    border: solid 2px green;
     background-color: lightgreen;
-    opacity: 0.75;
+    opacity: 0.9;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
