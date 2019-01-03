@@ -248,5 +248,8 @@ input[type=text] {
         grid-area: footer;
         z-index: 1;
     }
+    #legend {
+      display: none;
+    }
 
 }
