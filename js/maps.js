@@ -7,13 +7,8 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position){
     userLat = position.coords.latitude;
     userLon = position.coords.longitude;
-    console.log(userLat);
   });
 }
-
-// } else {
-//   console.log("Geolocation is not supported by this browser.");
-// }
 
 function initMap() {
 
