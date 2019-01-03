@@ -85,7 +85,17 @@ html {
     background-color: lightgreen;
     opacity: 0.75;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#legend {
+    grid-area: 1 / 1 / span 1/ span 2;
+    display:grid;
+    background-color: lightgreen;
+    font-size: 3vh;
+    text-align: center;
+    font-family: Lobster;
+    margin: auto auto;
 }
 
 .checklist-button {
