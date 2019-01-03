@@ -157,27 +157,52 @@ html {
     margin: 0px;
 }
 
-.form-div  h1 {text-align: center;}
-.form-div > div {
-  border-bottom: solid 3px green;
-  margin-bottom: 20px;
+.form-div  h1 {
+    text-align: center;
+    font-size: 20pt
 }
-
-.yes-no {
-  display: inline-flex;
+.form-div > div {
+  margin-bottom: 20px;
 }
 
 .form-div {
   width: 50%;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+.formColumn {
+    width: 40%;
+}
+
+@media screen and (min-width: 600px) {
+    .formColumn {
+        display: inline-block;
+    }
 }
 
 input[type=text] {
   width: 100%;
   height: 25px;
+  border-radius: 5px;
+}
+
+.formButton {
+    font-size: 14pt;
+    width: 5em;
+    background-color: lightgreen;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.formButton:hover {
+    background-color: turquoise;
 }
 
 /* mobile-friendliness */

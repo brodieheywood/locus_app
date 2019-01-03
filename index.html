@@ -106,58 +106,49 @@
         </i>
       </button>
       <div class="form-div">
-        <div><h1>ADD A NEW LOCATION</h1></div>
+        <div><h1>Know a relaxing location? Add it here.</h1></div>
         <form class="add-new-loco-form" action="index.html" method="post">
           <input type="text" name="Name" placeholder="Name"><br><br>
-            <input type="text" name="Address" placeholder="Address"><br><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
-          <div class="yes-no">
-            <span>Yes</span>
-            <input type="checkbox" name="" value="">
-            <span>No</span>
-            <input type="checkbox" name="" value="">
-          </div><br>
+          <input type="text" name="Address" placeholder="Address"><br><br>
+          <div class="formColumn">
+            <div class="criteria">
+              <input type="checkbox" value="foodTrue">
+              <span>Serves food</span>
+            </div><br>
+            <div class="criteria">
+              <input type="checkbox" value="washroomsTrue">
+              <span>Has washrooms</span>
+            </div><br>
+            <div class="criteria">
+              <input type="checkbox" value="notBusyTrue">
+              <span>Not busy</span>
+            </div><br>
+            <div class="criteria">
+              <input type="checkbox" value="wifiTrue">
+              <span>Has wifi</span>
+            </div><br>
+          </div>
+          <div class="formColumn">
+            <div class="criteria">
+              <input type="checkbox" value="coffeeTrue">
+              <span>Serves coffee</span>
+            </div><br>
+            <div class="criteria">
+              <input type="checkbox" value="powerTrue">
+              <span>Has power outlets</span>
+            </div><br>
+            <div class="criteria">
+            <input type="checkbox" value="lateTrue">
+              <span>Is open late</span>
+            </div><br>
+            <div class="criteria">
+            <input type="checkbox" value="outdoorsTrue">
+              <span>Is outdoors</span>
+            </div><br>
+          </div>
+          <br>
+          <input type="reset" value="Reset" class="formButton">
+          <input type="reset" value="Submit" class="formButton">
         </form>
       </div>
     </div>
