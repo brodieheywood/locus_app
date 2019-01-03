@@ -143,6 +143,10 @@ html {
     grid-area: info;
 }
 
+.button-text {
+    margin: 0px;
+}
+
 /* mobile-friendliness */
 @media screen and (max-width: 600px) {
     .home {
