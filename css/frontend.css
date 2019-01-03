@@ -100,7 +100,7 @@ html {
 }
 
 .checklist-button {
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: lightblue;
     font-family: Raleway;
     border: solid 1px white;
@@ -108,7 +108,7 @@ html {
 }
 
 .clicked-button {
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: lightgreen;
     border: solid 1px white;
     cursor: pointer;
