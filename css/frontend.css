@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 *:focus {
     outline: none;
@@ -94,13 +95,14 @@ html {
     background-color: lightgreen;
     font-size: 3vh;
     text-align: center;
-    font-family: Lobster;
+    font-family: Raleway;
     margin: auto auto;
 }
 
 .checklist-button {
     font-size: 3vh;
     background-color: lightblue;
+    font-family: Raleway;
     border: solid 1px white;
     cursor: pointer;
 }
