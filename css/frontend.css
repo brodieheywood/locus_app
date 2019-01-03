@@ -8,6 +8,13 @@ html {
     overflow: hidden;
 }
 
+.locoImg {
+  height: 75px;
+  margin-left: 15px;
+  border: solid 2px black;
+}
+.headings {display: inline-flex;}
+
 .site {
     /* background-image: url(./assets/background.png);
     background-size: 127vmax;

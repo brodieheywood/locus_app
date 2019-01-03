@@ -14,6 +14,7 @@ firebase.initializeApp({
 
 app.use("/js", express.static("js"));
 app.use("/css", express.static("css"));
+app.use("/imgs", express.static("imgs"));
 
 app.get("/", function (req, res) {
   let doc = fs.readFileSync("index.html");

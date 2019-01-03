@@ -49,7 +49,7 @@ function markers() {
       map: map,
       title: locations.locations[place].name
     });
-    let contentString = '<div><h1>' + locations.locations[place].name + '</h1><h3>' + locations.locations[place].address + '</h3></div>';
+    let contentString = '<div class="headings"><h1>' + locations.locations[place].name + '</h1><img class="locoImg" src="' + locations.locations[place].img + '"/></div>' + '<h3>' + locations.locations[place].address + '</h3>';
 
     let infowindow = new google.maps.InfoWindow({
       content: contentString
