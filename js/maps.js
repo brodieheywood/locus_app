@@ -37,6 +37,7 @@ function initMap() {
 }
 
 var locations;
+var prev_infowindow = false;
 
 function markers() {
   for (place in locations.locations) {
@@ -51,6 +52,11 @@ function markers() {
       content: contentString
     });
     marker.addListener('click', function() {
+      if( prev_infowindow ) {
+         prev_infowindow.close();
+      }
+
+      prev_infowindow = infowindow;
       infowindow.open(map, marker);
     });
   }
