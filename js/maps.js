@@ -29,6 +29,11 @@ function initMap() {
     content: contentString
   });
   marker.addListener('click', function() {
+    if( prev_infowindow ) {
+       prev_infowindow.close();
+    }
+
+    prev_infowindow = infowindow;
     infowindow.open(map, marker);
   });
 }
