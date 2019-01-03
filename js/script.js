@@ -137,10 +137,12 @@ function outside_clicked(e) {
   e.preventDefault();
   if (outside === false) {
     outside = true;
+    markerArray[3].setVisible(true);
     markerArray[5].setVisible(true);
   }
   else if (outside === true) {
     outside = false;
+    markerArray[3].setVisible(false);
     markerArray[5].setVisible(false);
   }
   reloadMap();
