@@ -25,7 +25,7 @@ var ref = firebase.app().database().ref();
 
 app.get("/getLocations", function(req, res) {
   ref.once("value").then(function (snap) {
-    console.log("snap.val()", snap.val());
+    // console.log("snap.val()", snap.val());
     res.send(snap.val());
  });
 });
