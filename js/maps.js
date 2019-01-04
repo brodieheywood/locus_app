@@ -1,17 +1,28 @@
+/**
+* Script for making the map and the markers along with their infoWindows.
+* Also accepts JSON object from Node.js and reads from Firebase.
+*** A big issue that should be revisited was ways to deal with the asyncronous calls.
+*** sometimes the map loads before the current location is fetched which unfortunately breaks the app.
+*/
+
 var map;
 
 var userLat;
 var userLon;
 
-// async function getLoco() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      userLat = position.coords.latitude;
-      userLon = position.coords.longitude;
-    });
-  }
-// }
+/**
+* Code for retreiving user location for current location marker
+*/
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position){
+    userLat = position.coords.latitude;
+    userLon = position.coords.longitude;
+  });
+}
 
+/**
+* Google map initialization call and adding markers for current location
+*/
 function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -29,6 +40,8 @@ function initMap() {
     content: contentString
   });
   marker.addListener('click', function() {
+    //This if statement is what keeps track of the last opened infoWindow.
+    //If one is open, then close that when another is selected.
     if( prev_infowindow ) {
        prev_infowindow.close();
     }
@@ -42,6 +55,9 @@ var locations;
 var prev_infowindow = false;
 var markerArray = [];
 
+/**
+* Loopsa through all the locations in the database and creates a marker and infoWindow for each.
+*/
 function markers() {
   for (place in locations.locations) {
     let marker = new google.maps.Marker({
@@ -55,6 +71,7 @@ function markers() {
       content: contentString
     });
     marker.addListener('click', function() {
+      //Same checker.
       if( prev_infowindow ) {
          prev_infowindow.close();
       }
@@ -67,6 +84,7 @@ function markers() {
   }
 }
 
+//Ajax call for retreiving locations as a JSON object from Node.js/Express.
 function retrieveLocations() {
   $.ajax({
     url: "/getLocations",

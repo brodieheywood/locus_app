@@ -1,3 +1,9 @@
+/**
+* This script is for setting all of the markers as invisible and allowing
+* for the toggling of the markers upon button press.
+* The buttons are currently inclusive and should be revisited to implement a exclusive sort.
+*/
+
 var coffee = false;
 var comfy = false;
 var food = false;
@@ -177,6 +183,8 @@ function late_clicked(e) {
     markerArray[7].setVisible(false);
   }
 };
+
+//Scroll to botton function.
 
 $( 'button' ).click(function() {
   $( this ).toggleClass( 'clicked-button' );

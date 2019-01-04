@@ -7,6 +7,9 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/frontend.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Aware that the scripts should be placed at the end of the body tag,
+  but was placed here as a band-aid solution for asyncronous calls for presentation's sake. -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="js/maps.js"></script>
@@ -43,13 +46,9 @@
           </i>
           <p class='button-text'>Washrooms</p>
         </button>
-        <!-- <button class='checklist-button' id='seating'>
-          Seats
-        </button> -->
         <button class='checklist-button' id='notBusy'>
           <i class="material-icons" style="font-size: 10vh" alt="notBusy icon">
             sentiment_satisfied
-            <!-- spa -->
           </i>
           <p class='button-text'>Not Busy</p>
         </button>
@@ -73,15 +72,12 @@
         </button>
         <button class='checklist-button' id='late'>
           <i class="material-icons" style="font-size: 10vh" alt="Late icon">
-            <!-- tonality -->
-            <!-- brightness_2 -->
             brightness_3
           </i>
           <p class='button-text'>Open Late</p>
         </button>
         <button class='checklist-button' id='outside'>
           <i class="material-icons" style="font-size: 10vh" alt="Outdoor icon">
-            <!-- beach_access -->
             nature_people
           </i>
           <p class='button-text'>Outdoors</p>
