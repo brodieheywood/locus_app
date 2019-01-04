@@ -11,7 +11,7 @@ var userLat;
 var userLon;
 
 /**
-* Code for retreiving user location for current location marker
+* Code for retreiving user longitude and latitude for current location marker
 */
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position){
@@ -20,9 +20,7 @@ if (navigator.geolocation) {
   });
 }
 
-/**
-* Google map initialization call and adding markers for current location
-*/
+// Initializes Google Maps API map on the page and populates it initially with a point at the user's location. Adds a popup info window to the point.
 function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -51,13 +49,31 @@ function initMap() {
   });
 }
 
+// Variable that will hold the snapshot of the database
 var locations;
+
+// Makes an ajax call to the Node.js service to get the data from the database
+function retrieveLocations() {
+  $.ajax({
+    url: "/getLocations",
+    type: "GET",
+    datatype: "json",
+    success: function(data) {
+      locations = data;
+      markers();
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+}
+
+retrieveLocations();
+
 var prev_infowindow = false;
 var markerArray = [];
 
-/**
-* Loopsa through all the locations in the database and creates a marker and infoWindow for each.
-*/
+// Creates all the markers for other locations that are in the database and adds infowindow popups to them. Hidden initially.
 function markers() {
   for (place in locations.locations) {
     let marker = new google.maps.Marker({
@@ -83,21 +99,3 @@ function markers() {
     markerArray.push(marker);
   }
 }
-
-//Ajax call for retreiving locations as a JSON object from Node.js/Express.
-function retrieveLocations() {
-  $.ajax({
-    url: "/getLocations",
-    type: "GET",
-    datatype: "json",
-    success: function(data) {
-      locations = data;
-      markers();
-    },
-    error: function(error) {
-      console.log(error);
-    }
-  });
-}
-
-retrieveLocations();
