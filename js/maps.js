@@ -3,15 +3,15 @@ var map;
 var userLat;
 var userLon;
 
-// async function getLoco() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      userLat = position.coords.latitude;
-      userLon = position.coords.longitude;
-    });
-  }
-// }
+// Get user latitude and longitude
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position){
+    userLat = position.coords.latitude;
+    userLon = position.coords.longitude;
+  });
+}
 
+// Initializes Google Maps API map on the page and populates it initially with a point at the user's location. Adds a popup info window to the point.
 function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -38,10 +38,31 @@ function initMap() {
   });
 }
 
+// Variable that will hold the snapshot of the database
 var locations;
+
+// Makes an ajax call to the Node.js service to get the data from the database
+function retrieveLocations() {
+  $.ajax({
+    url: "/getLocations",
+    type: "GET",
+    datatype: "json",
+    success: function(data) {
+      locations = data;
+      markers();
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+}
+
+retrieveLocations();
+
 var prev_infowindow = false;
 var markerArray = [];
 
+// Creates all the markers for other locations that are in the database and adds infowindow popups to them. Hidden initially.
 function markers() {
   for (place in locations.locations) {
     let marker = new google.maps.Marker({
@@ -66,20 +87,3 @@ function markers() {
     markerArray.push(marker);
   }
 }
-
-function retrieveLocations() {
-  $.ajax({
-    url: "/getLocations",
-    type: "GET",
-    datatype: "json",
-    success: function(data) {
-      locations = data;
-      markers();
-    },
-    error: function(error) {
-      console.log(error);
-    }
-  });
-}
-
-retrieveLocations();
